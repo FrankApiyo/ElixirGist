@@ -41,16 +41,17 @@ defmodule ElixirGist.Comments do
   Creates a comment.
 
   ## Examples
-
-      iex> create_comment(%{field: value})
+      iex> user = %User{id: 1}
+      iex> create_comment(user, %{field: value})
       {:ok, %Comment{}}
 
-      iex> create_comment(%{field: bad_value})
+      iex> create_comment(user, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_comment(attrs \\ %{}) do
-    %Comment{}
+  def create_comment(user, attrs \\ %{}) do
+    user
+    |> Ecto.build_assoc(:comments)
     |> Comment.changeset(attrs)
     |> Repo.insert()
   end

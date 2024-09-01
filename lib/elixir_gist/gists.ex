@@ -41,16 +41,17 @@ defmodule ElixirGist.Gists do
   Creates a gist.
 
   ## Examples
-
-      iex> create_gist(%{field: value})
+      iex> user = %User{id: 1}
+      iex> create_gist(user, %{field: value})
       {:ok, %Gist{}}
 
-      iex> create_gist(%{field: bad_value})
+      iex> create_gist(user, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_gist(attrs \\ %{}) do
-    %Gist{}
+  def create_gist(user, attrs \\ %{}) do
+    user
+    |> Ecto.build_assoc(:gists)
     |> Gist.changeset(attrs)
     |> Repo.insert()
   end
@@ -137,16 +138,17 @@ defmodule ElixirGist.Gists do
   Creates a saved_gist.
 
   ## Examples
-
-      iex> create_saved_gist(%{field: value})
+      iex> user = %User{id: 1}
+      iex> create_saved_gist(user, %{field: value})
       {:ok, %SavedGist{}}
 
-      iex> create_saved_gist(%{field: bad_value})
+      iex> create_saved_gist(user, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_saved_gist(attrs \\ %{}) do
-    %SavedGist{}
+  def create_saved_gist(user, attrs \\ %{}) do
+    user
+    |> Ecto.build_assoc(:saved_gists)
     |> SavedGist.changeset(attrs)
     |> Repo.insert()
   end
