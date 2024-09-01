@@ -1,4 +1,4 @@
-# ElixirGist
+# ElixirGist clone
 
 To start your Phoenix server:
 
@@ -7,7 +7,16 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
+Contexts in this project were created by running the following commands:
+
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+
+```console
+mix phx.gen.auth Accounts User users
+mix phx.gen.context Gists Gist gists user_id:references:users name:string description:text markup_text:text
+mix phx.gen.context  Gists SavedGist saved_gists user_id:references:users gist_id:references:gists
+mix phx.gen.context Comments Comment comments user_id:references:users gist_id:references:gists markup_text:text
+```
 
 ## Learn more
 
