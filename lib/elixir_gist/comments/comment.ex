@@ -9,6 +9,8 @@ defmodule ElixirGist.Comments.Comment do
     belongs_to :user, ElixirGist.Accounts.User
     belongs_to :gist, ElixirGist.Gists.Gist
 
+    has_many :gists, ElixirGist.Gists.Gist
+
     timestamps(type: :utc_datetime)
   end
 
