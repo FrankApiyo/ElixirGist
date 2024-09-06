@@ -49,22 +49,11 @@ form input[type="text"] {
 }
 
 #textarea-section div:nth-child(2), textarea {
-  @apply bg-emDark-dark font-brand font-regular border-b border-l border-r border-white h-[300px] resize-none w-full rounded-b-md;
+  @apply bg-emDark font-brand font-regular text-white text-xs border-b border-l border-r border-white h-[300px] resize-none w-full rounded-b-md;
 }
 
 form textarea {
-  @apply border-t-0 border-r-0 border-l-0 m-0;
-  margin: 0 !important;
-  color: white !important;
-  font-size: 1.25rem;
-}
-
-.create-button {
-  @apply bg-emPurple border-white font-brand font-regular text-black text-base;
-}
-
-.create-button:hover {
-  @apply hover:bg-emPurple-dark text-emDark-light border-emDark-light;
+  @apply border-t-0 rounded-b-md;
 }
 
 .round-image-padding {
