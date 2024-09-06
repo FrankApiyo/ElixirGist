@@ -48,8 +48,19 @@ form input[type="text"] {
   @apply focus:outline-none focus:border-emLavender focus:ring-0
 }
 
-#textarea-section div:nth-child(2), textarea {
-  @apply bg-emDark-dark font-brand font-regular border-b border-l border-r border-white h-[300px] resize-none w-full rounded-b-md;
+#textarea-section div:nth-child(2) div, #textarea-section div:nth-child(2) div textarea {
+  @apply bg-emDark-dark font-brand font-regular border-b border-l border-r border-white h-[300px] resize-none w-full rounded-br-md;
+  border-left: none;
+}
+
+.line-numbers {
+  @apply border-l border-white font-brand font-regular text-xs text-emDark-light bg-emDark-dark h-[300px] w-[50px] text-right overflow-hidden resize-none;
+  border-right: none;
+  border-top: none;
+}
+
+.line-numbers {
+  @apply focus:outline-none focus:border-white focus:ring-0;
 }
 
 form textarea {
