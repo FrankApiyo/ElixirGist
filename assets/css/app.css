@@ -64,6 +64,22 @@ form input[type="text"] {
   @apply focus:outline-none focus:border-white focus:ring-0;
 }
 
+.syntax-area {
+  @apply bg-emSyntax border text-xs border-white h-auto;
+  border-top: none;
+  border-left: none;
+}
+
+.syntax-numbers {
+  @apply border border-white font-brand py-[12px] text-xs text-emDark-light bg-emSyntax h-auto w-[54px] text-right overflow-hidden resize-none;
+  border-right: none;
+  border-top: none;
+}
+
+.syntax-numbers:focus {
+  @apply focus:outline-none focus:border-white focus:ring-0;
+}
+
 form textarea {
   @apply border-t-0 border-r-0 border-l-0 m-0;
   margin: 0 !important;
